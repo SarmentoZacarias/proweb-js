@@ -12,11 +12,17 @@
 </head>
 <body>
     <div id="calculator">
+        <div class="history-content" id="history">
+            <div class="history-row">
+                <h2>100x5</h2>
+                <h1>500</h1>
+            </div>
+        </div>
         <div class="container">
             <div class="display">
                 <div class="superior">
-                    <div class="history">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    <div class="history" onclick="showHistory()">
+                        <i class="fa-solid fa-clock-rotate-left" id="history-btn"></i>
                     </div>
                     <div class="calc">
                         <h3 id="calc"></h3>
@@ -37,10 +43,11 @@
                         <div class="key clear" onclick="clean()">
                             <i class="fa-solid fa-c"></i>
                         </div>
-                        <div class="key">
+                        <div class="key" onclick="root()">
                             <i class="fa-solid fa-square-root-variable"></i>
+                            
                         </div>
-                        <div class="key">
+                        <div class="key" onclick="pow()">
                             <i class="fa-solid fa-superscript"></i>
                         </div>
                     </div>

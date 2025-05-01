@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="shortcut icon" href="./asset/ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/a0ca239e5b.js" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <div id="calculator">
+        <div class="container">
+            <div class="display">
+                <div class="superior">
+                    <div class="history">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <div class="calc">
+                        <h3 id="calc"></h3>
+                    </div>
+                </div>
+                <div class="inferior">
+                    <div class="operation">
+                        <h2 id="operation"></h2>
+                    </div>
+                    <div class="resut">
+                        <h1 class="cursor write-animation" id="result">0</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="keyboard">
+                <div class="key-left">
+                    <div class="key-row operation-row">
+                        <div class="key clear" onclick="clean()">
+                            <i class="fa-solid fa-c"></i>
+                        </div>
+                        <div class="key">
+                            <i class="fa-solid fa-square-root-variable"></i>
+                        </div>
+                        <div class="key">
+                            <i class="fa-solid fa-superscript"></i>
+                        </div>
+                    </div>
+                    <div class="key-row">
+                        <div class="key" onclick="enterNum('9')">
+                            <i class="fa-solid fa-9"></i>
+                        </div>
+                        <div class="key" onclick="enterNum('8')">
+                            <i class="fa-solid fa-8"></i>
+                        </div>
+                        <div class="key" onclick="enterNum('7')">
+                            <i class="fa-solid fa-7"></i>
+                        </div>
+                    </div>
+                    <div class="key-row">
+                        <div class="key" onclick="enterNum('4')">
+                            <i class="fa-solid fa-4"></i>
+                        </div>
+                        <div class="key" onclick="enterNum('5')">
+                            <i class="fa-solid fa-5"></i>
+                        </div>
+                        <div class="key" onclick="enterNum('6')">
+                            <i class="fa-solid fa-6"></i>
+                        </div>
+                    </div>
+                    <div class="key-row">
+                        <div class="key" onclick="enterNum('1')">
+                            <i class="fa-solid fa-1"></i>
+                        </div>
+                        <div class="key" onclick="enterNum('2')">
+                            <i class="fa-solid fa-2"></i>
+                        </div>
+                        <div class="key" onclick="enterNum('3')">
+                            <i class="fa-solid fa-3"></i>
+                        </div>
+                    </div>
+                    <div class="key-row">
+                        <div class="key" onclick="enterNum('0')">
+                            <i class="fa-solid fa-0"></i>
+                        </div>
+                        <div class="key dote" onclick="enterNum('.')">
+                            <i><i class="fa-solid fa-circle"></i></i>
+                        </div>
+                        <div class="key" onclick="backspace()">
+                            <i class="fa-solid fa-delete-left"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="key-right">
+                    <div class="key-row">
+                        <div class="key" onclick="setOperation('/')">
+                            <i class="fa-solid fa-divide"></i>
+                        </div>
+                    </div>
+                    <div class="key-row">
+                        <div class="key" onclick="setOperation('x')">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                    <div class="key-row">
+                        <div class="key" onclick="setOperation('-')">
+                            <i class="fa-solid fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="key-row" onclick="setOperation('+')">
+                        <div class="key">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="key-row">
+                        <div class="key equal" onclick="operate()">
+                            <i class="fa-solid fa-equals"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

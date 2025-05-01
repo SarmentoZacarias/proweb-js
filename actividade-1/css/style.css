@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #cfcfcf;
+}
+
+#calculator{
+    position: relative;
+    background-color:#232229;
+    width: 320px;
+    height: 500px;
+    margin: auto;
+    top: 150px;
+    box-shadow: 2px 8px 11px rgba(0 0 0 / 50%);
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.container{
+    position: relative;
+    height: calc(100% - 10px);
+    margin: auto;
+    padding: 5px;
+    display: grid;
+    gap: 5px;
+    grid-template-rows: .5fr 1.5fr;
+}
+
+.display{
+    background-color: #2a2735;
+    position: relative;
+    display: grid;
+    grid-template-rows: .5fr 1fr;
+    border-radius: 5px;
+}
+
+.display .superior{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px 0px 10px;
+    color: #ffffff93;
+    font-size: .95rem;
+}
+
+.display .superior .history{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.display .inferior{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: #fff;
+}
+
+.display .inferior h1{
+    font-size: 2.8rem;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.display .inferior h2{
+    font-size: 2.4rem;
+}
+
+.keyboard{
+    height: 100%;
+    background-color: transparent;
+    display: grid;
+    gap: 2px;
+    grid-template-columns: 1.5fr .5fr;
+    width: 100%;
+}
+
+.key-left, .key-right{
+    display: grid;
+    grid-row: 1fr 1fr 1fr 1fr 1fr;
+    gap: 2px;
+}
+
+.key-left, .key-right{
+    grid-row: 1fr 1fr 1fr 1fr 1fr;
+
+}
+
+.key-left .key-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    gap: 2px;
+}
+
+.key-row .key{
+    background-color: #2a2735;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: .2s;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.key-right .key, .operation-row .key{
+    background-color: #312f3b;
+    color: #be615d;
+    
+}
+
+.key.equal{
+    background-color: #ef4a43;
+    color: #fff;
+}
+
+.key.clear{
+    color: #ef4a43;
+}
+
+.key-row .key:hover{
+    transition: .1s;
+    background-color: #3c3a44;
+}
+
+.key.equal:hover{
+    background-color: #b83935;
+}
+
+.key-row .key.dote{
+    font-size: .4rem;
+}
+
+.cursor{
+    position: relative;
+    border-right: 2px solid rgba(255,255,255,.75);
+}
+
+.write-animation {
+    animation: 
+      _blink .95s steps(30) infinite normal;
+}
+
+@keyframes _blink{
+    from { border-right-color: rgba(255,255,255,.75); }
+    to { border-right-color: transparent;}
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="shortcut icon" href="./asset/ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/a0ca239e5b.js" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/indexedDB.js"></script>
+</head>
+<body onload="withDB(loadItems)">
+    <div class="container">
+        <div class="l-side">
+            <div class="form">
+                <div class="input-form">
+                    <label for="title" id="label-t">Título</label>
+                    <input type="text" name="title" id="title" onfocus="moveTitle(1)" onblur="moveTitle(0)">
+                    <textarea name="description" id="description" placeholder="Descrição" ></textarea>
+                    <div class="more-form" id="expand-form">
+                        <div class="expand" onclick="expandForm()">
+                            <i class="fa-solid fa-ellipsis" id="expand">...</i>
+                            <!-- <i class="fa-solid fa-caret-up" id="colapse"></i> -->
+                            <i class="fa-solid fa-minus" id="colapse">^</i>
+                        </div>
+                        <div class="more-form-input">
+                            <div class="exp exp-2">
+                                <div class="radio-l">
+                                    <input type="radio" name="deadline-r" id="deadline-r" onclick="prazodef()">
+                                    <label for="deadline-r">Definir prazo</label>
+                                </div>
+                                <input type="date" name="deadline" id="deadline" >
+                            </div>
+                            <div class="exp exp-3">
+                                <div class="radio-l">
+                                    <input type="radio" name="email-r" id="email-r" onclick="emaildef()">
+                                    <label for="email-r">Lembrete no email</label>
+                                </div>
+                                
+                                <input type="email" name="email" id="email" placeholder="email" disabled>
+                            </div>
+                            <div class="exp exp-1">
+                                <div class="radio-l">
+                                    <input type="radio" name="priority" id="priority" onclick="prioritydef()">
+                                    <label for="priority">Prioritário</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="addItem()">Adicionar tarefa</button>
+                </div>
+            </div>
+        </div>
+        <div class="r-side">
+            <div class="filter-content">
+                <div class="filter-input">
+                    <select name="ordenate" id="ordenate">
+                        <option value="0">Ordenar por</option>
+                        <option value="1">Data de criação</option>
+                        <option value="2">Data limite</option>
+                        <option value="3">Prioridade</option>
+                    </select>
+                </div>
+                <div class="filter-input">
+                    <select name="" id="">
+                        <option value="">Mostrar</option>
+                        <option value="">Prioritários</option>
+                        <option value="">Concluídas</option>
+                        <option value="">Pendente</option>
+                    </select>
+                </div>
+                <div class="filter-input">
+                    <div class="tag">
+                        <span>Pendentes</span>
+                        <i class="fa-regular fa-circle-xmark"></i>
+                    </div>
+                </div>
+                <div class="filter-input">
+                    <div class="tag">
+                        <span>Prioritário</span>
+                        <i class="fa-regular fa-circle-xmark"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="list" id="list">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
